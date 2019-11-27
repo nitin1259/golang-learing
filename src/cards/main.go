@@ -9,19 +9,21 @@ func main() {
 	// card = newCard()
 	// fmt.Println(card)
 
-	printState()
+	// printState()
 
 	fmt.Println("slice example started")
 
-	cards := []string{"Ace of Spades", "Five of Heart"}
+	cards := deck{"Ace of Spades", "Five of Heart"}
 
-	cards = append(cards, "King of Heart")
+	cards = append(cards, "King of Heart", newCard())
 
 	fmt.Println(cards)
 
-	for i, card := range cards {
-		fmt.Println(i, "index, card:", card)
-	}
+	// for i, card := range cards {
+	// 	fmt.Println(i, "index, card:", card)
+	// }
+
+	cards.printEach()
 
 }
 
