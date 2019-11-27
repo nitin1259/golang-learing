@@ -25,7 +25,16 @@ func main() {
 
 	cards := newDeck()
 
+	fmt.Println("priting the original deck")
 	cards.printEach()
+
+	hand, remainingDeck := deal(cards, 5)
+
+	fmt.Println("priting the deal deck")
+	hand.printEach()
+
+	fmt.Println("priting the leftover deck")
+	remainingDeck.printEach()
 
 }
 
