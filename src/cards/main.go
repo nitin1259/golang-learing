@@ -47,6 +47,11 @@ func main() {
 	fmt.Println(cardString)
 
 	cards.saveToFile("my_cards")
+
+	newCards := newDeckFromFile("my_cards")
+
+	fmt.Println("+++++ New cards from file ++++++")
+	newCards.printEach()
 }
 
 // func newCard() string {
