@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // create a new type of deck
@@ -73,8 +74,14 @@ func newDeckFromFile(filename string) deck {
 }
 
 func (d deck) suffle() {
+	// to improve the suffling with dynamic number generation we need to pass the source
+
+	source := rand.NewSource(time.Now().UnixNano())
+
+	r := rand.New(source)
+
 	for i := range d {
-		newPosition := rand.Intn(len(d) - 1)
+		newPosition := r.Intn(len(d) - 1) // use a default shared Source that produces a deterministic sequence of values each time a program is run
 
 		d[i], d[newPosition] = d[newPosition], d[i]
 	}
