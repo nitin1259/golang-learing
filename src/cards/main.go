@@ -23,18 +23,23 @@ func main() {
 	// 	fmt.Println(i, "index, card:", card)
 	// }
 
-	cards := newDeck()
+	fmt.Println("Type conversion example")
+	greeting := "Hi there!"
 
-	fmt.Println("priting the original deck")
-	cards.printEach()
+	fmt.Println([]byte(greeting))
 
-	hand, remainingDeck := deal(cards, 5)
+	// cards := newDeck()
 
-	fmt.Println("priting the deal deck")
-	hand.printEach()
+	// fmt.Println("priting the original deck")
+	// cards.printEach()
 
-	fmt.Println("priting the leftover deck")
-	remainingDeck.printEach()
+	// hand, remainingDeck := deal(cards, 5)
+
+	// fmt.Println("priting the deal deck")
+	// hand.printEach()
+
+	// fmt.Println("priting the leftover deck")
+	// remainingDeck.printEach()
 
 }
 
