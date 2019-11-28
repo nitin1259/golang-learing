@@ -33,25 +33,31 @@ func main() {
 	fmt.Println("priting the original deck")
 	cards.printEach()
 
-	hand, remainingDeck := deal(cards, 5)
+	// hand, remainingDeck := deal(cards, 5)
 
-	fmt.Println("priting the deal deck")
-	hand.printEach()
+	// fmt.Println("priting the deal deck")
+	// hand.printEach()
 
-	fmt.Println("priting the leftover deck")
-	remainingDeck.printEach()
+	// fmt.Println("priting the leftover deck")
+	// remainingDeck.printEach()
 
-	fmt.Println("printing cardds into string")
-	cardString := cards.toString()
+	// fmt.Println("printing cardds into string")
+	// cardString := cards.toString()
 
-	fmt.Println(cardString)
+	// fmt.Println(cardString)
 
-	cards.saveToFile("my_cards")
+	// cards.saveToFile("my_cards")
 
-	newCards := newDeckFromFile("my_cards")
+	// newCards := newDeckFromFile("my_cards")
 
-	fmt.Println("+++++ New cards from file ++++++")
-	newCards.printEach()
+	// fmt.Println("+++++ New cards from file ++++++")
+	// newCards.printEach()
+
+	cards.suffle()
+
+	fmt.Println("suffle cards")
+	cards.suffle()
+	cards.printEach()
 }
 
 // func newCard() string {
