@@ -25,22 +25,41 @@ func main() {
 	eion := person{
 		firstName: "Eion",
 		lastName:  "Morgan",
-		contact: contactInfo{
+		contactInfo: contactInfo{
 			email:   "admin@gamil.com",
 			zipcode: 500081,
 		},
 	}
 
-	fmt.Printf("%+v", eion)
+	// fmt.Printf("%+v", eion)
+	eion.printPerson()
+
+	eion.updateName("Smith")
+
+	eion.printPerson()
 }
 
+// type person struct {
+// 	firstName string
+// 	lastName  string
+// 	contact   contactInfo
+// }
+
 type person struct {
-	firstName string
-	lastName  string
-	contact   contactInfo
+	firstName   string
+	lastName    string
+	contactInfo // equivalent to contactInfo contactInfo
 }
 
 type contactInfo struct {
 	email   string
 	zipcode int
+}
+
+func (p person) printPerson() {
+	fmt.Printf("%+v", p)
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }
