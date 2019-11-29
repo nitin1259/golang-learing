@@ -28,10 +28,10 @@ func main() {
 
 	// fmt.Println([]byte(greeting))
 
-	cards := newDeck()
+	// cards := newDeck()
 
-	fmt.Println("priting the original deck")
-	cards.printEach()
+	// fmt.Println("priting the original deck")
+	// cards.printEach()
 
 	// hand, remainingDeck := deal(cards, 5)
 
@@ -53,11 +53,27 @@ func main() {
 	// fmt.Println("+++++ New cards from file ++++++")
 	// newCards.printEach()
 
-	cards.suffle()
+	// cards.suffle()
 
-	fmt.Println("suffle cards")
-	cards.suffle()
-	cards.printEach()
+	// fmt.Println("suffle cards")
+	// cards.suffle()
+	// cards.printEach()
+
+	checkEvenOdd()
+}
+
+func checkEvenOdd() {
+
+	numbers := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	var output string
+	for n := range numbers {
+		if n%2 != 0 {
+			output = fmt.Sprintf("%d is odd", n)
+		} else {
+			output = fmt.Sprintf("%d is even", n)
+		}
+		fmt.Println(output)
+	}
 }
 
 // func newCard() string {
