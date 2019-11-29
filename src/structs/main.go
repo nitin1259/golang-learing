@@ -12,6 +12,15 @@ func main() {
 	james := person{firstName: "James", lastName: "Anderson"}
 	fmt.Println(james)
 
+	//third way of initialization
+	var jimmmy person
+	// by default it will take default vaues - for sting its "", for int and float its 0, for bool its false
+	fmt.Println(jimmmy)
+	jimmmy.firstName = "Joe"
+	jimmmy.lastName = "Root"
+
+	fmt.Printf("%+v", jimmmy)
+
 }
 
 type person struct {
