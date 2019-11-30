@@ -34,7 +34,9 @@ func main() {
 	// fmt.Printf("%+v", eion)
 	eion.printPerson()
 
-	eion.updateName("Smith")
+	personPointer := &eion // &variable -> gives me the memory address of the value is pointing at.
+
+	personPointer.updateName("Smith")
 
 	eion.printPerson()
 }
@@ -60,6 +62,6 @@ func (p person) printPerson() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointer *person) updateName(newFirstName string) { // *persion -> this is a type description - that means we are working with a pointer to a person.
+	(*pointer).firstName = newFirstName // *pointer -> give me the value this memory address is pointing at
 }
