@@ -33,4 +33,26 @@ func main() {
 	delete(color3, 10)
 
 	fmt.Println(color3)
+
+	fmt.Println("********* Iteration through map *************")
+	iterationMapExample()
+}
+
+func iterationMapExample() {
+
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf723",
+		"white": "#ffffff",
+		"2":     "#123456",
+	}
+
+	printMap(colors)
+}
+
+func printMap(c map[string]string) {
+	for key, value := range c {
+
+		fmt.Println("key:", key, " value:", value)
+	}
 }
