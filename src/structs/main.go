@@ -45,6 +45,13 @@ func main() {
 	eion.updateName("Eion Smith") // can pass same type or pointer to that type with go. automatically taken care in go
 
 	eion.printPerson()
+
+	// examples of slice and maps which behave like pass by reference
+
+	mySlice := []string{"Hi", "there", "Welcome", "to", "Go Lang"}
+	updateSlice(mySlice) // this is also copied and pass to function but under slice defination its pointer to array which will be same even after copy.
+	fmt.Println(mySlice)
+
 }
 
 // type person struct {
@@ -70,4 +77,8 @@ func (p person) printPerson() {
 
 func (pointer *person) updateName(newFirstName string) { // *persion -> this is a type description - that means we are working with a pointer to a person.
 	(*pointer).firstName = newFirstName // *pointer -> give me the value this memory address is pointing at
+}
+
+func updateSlice(s []string) {
+	s[0] = "Bye"
 }
