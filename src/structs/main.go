@@ -32,11 +32,17 @@ func main() {
 	}
 
 	// fmt.Printf("%+v", eion)
-	eion.printPerson()
+	// eion.printPerson()
 
-	personPointer := &eion // &variable -> gives me the memory address of the value is pointing at.
+	// personPointer := &eion // &variable -> gives me the memory address of the value is pointing at.
 
-	personPointer.updateName("Smith")
+	// personPointer.updateName("Smith")
+
+	// eion.printPerson()
+
+	//sortcut with go pointers
+
+	eion.updateName("Eion Smith") // can pass same type or pointer to that type with go. automatically taken care in go
 
 	eion.printPerson()
 }
