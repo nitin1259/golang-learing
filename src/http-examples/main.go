@@ -16,6 +16,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("Response: ", resp)
+	// fmt.Println("Response: ", resp)
+
+	bs := make([]byte, 99999)
+	resp.Body.Read(bs)
+
+	fmt.Println(string(bs))
 
 }
