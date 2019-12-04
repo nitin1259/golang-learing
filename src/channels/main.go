@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
 	fmt.Println("Welcome to go Channels")
 
 	links := []string{
-		"http://chaashta.com",
 		"http://google.com",
 		"http://amazon.com",
 		"http://facebook.com",
@@ -46,7 +46,14 @@ func main() {
 
 	for l := range c {
 		// time.Sleep(time.Second) // this is not the correct place to sleep as per defination of Sleep - it will sleep the main routine instead of child routine
-		go checkLink(l, c)
+		// go checkLink(l, c)
+
+		// functional literal to rescure this situation which is equivalent to ananomys function in javascript.
+
+		go func() {
+			time.Sleep(5 * time.Second)
+			checkLink(l, c)
+		}()
 	}
 	/**
 
