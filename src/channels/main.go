@@ -50,10 +50,10 @@ func main() {
 
 		// functional literal to rescure this situation which is equivalent to ananomys function in javascript.
 
-		go func() {
+		go func(link string) {
 			time.Sleep(5 * time.Second)
-			checkLink(l, c)
-		}()
+			checkLink(link, c)
+		}(l)
 	}
 	/**
 
