@@ -45,6 +45,7 @@ func main() {
 	*/
 
 	for l := range c {
+		// time.Sleep(time.Second) // this is not the correct place to sleep as per defination of Sleep - it will sleep the main routine instead of child routine
 		go checkLink(l, c)
 	}
 	/**
