@@ -37,10 +37,24 @@ func main() {
 			fmt.Println(<-c) // this is blocking call until unless we recieve any value in the channel
 		}
 	*/
-	for {
-		go checkLink(<-c, c)
-	}
 
+	/*
+		for {
+			go checkLink(<-c, c)
+		}
+	*/
+
+	for l := range c {
+		go checkLink(l, c)
+	}
+	/**
+
+	We're saying wait for the channel to return some value after the channel has returned some value.
+	Assign it to this variable l in this case being short for link then run the body of the for loop and
+	inside the for loop we immediately spawn a new go routine calling check link passing in the link that
+	we've just received in the channel and then passing the channel as the second argument.
+
+	*/
 }
 
 /*
