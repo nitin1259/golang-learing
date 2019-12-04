@@ -32,11 +32,18 @@ func main() {
 	// fmt.Println(<-c)
 	// fmt.Println(<-c)
 
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c) // this is blocking call until unless we recieve any value in the channel
+	/*
+		for i := 0; i < len(links); i++ {
+			fmt.Println(<-c) // this is blocking call until unless we recieve any value in the channel
+		}
+	*/
+	for {
+		go checkLink(<-c, c)
 	}
+
 }
 
+/*
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
@@ -47,4 +54,17 @@ func checkLink(link string, c chan string) {
 
 	fmt.Println(link, " is up")
 	c <- "yup link is up!!!"
+}
+*/
+
+func checkLink(link string, c chan string) {
+	_, err := http.Get(link)
+	if err != nil {
+		fmt.Println(link, " might be down")
+		c <- "Might be down link"
+		return
+	}
+
+	fmt.Println(link, " is up")
+	c <- link
 }
