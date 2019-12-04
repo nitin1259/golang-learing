@@ -9,6 +9,7 @@ func main() {
 	fmt.Println("Welcome to go Channels")
 
 	links := []string{
+		"http://chaashta.com",
 		"http://google.com",
 		"http://amazon.com",
 		"http://facebook.com",
@@ -25,11 +26,15 @@ func main() {
 		go checkLink(link, c)
 	}
 
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
+	// fmt.Println(<-c) // this is blocking call until unless we recieve any value in the channel
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c) // this is blocking call until unless we recieve any value in the channel
+	}
 }
 
 func checkLink(link string, c chan string) {
