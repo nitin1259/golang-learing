@@ -1,4 +1,4 @@
-# golang-learing... philoshpy ...
+# golang-learing
 
 # Things I believe
 
