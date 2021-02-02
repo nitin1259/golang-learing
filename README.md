@@ -1,4 +1,4 @@
-# golang-learing
+# Golang-learing
 
 # Things I believe
 
