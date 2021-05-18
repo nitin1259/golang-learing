@@ -7,6 +7,9 @@ import "fmt"
 This line below can be interpreted as essentially saying
 hey everyone inside of this program everyone inside the program all of you different types out there all of you different types
 like English bot in Spanish bot to all of you to whom it may concern our program now has a new type a third custom type called bot.
+*/
+
+/**
 
 So we have a new custom type called bot right here.
 
