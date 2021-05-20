@@ -62,6 +62,7 @@ func main() {
 	checkEvenOdd()
 }
 
+// checkEvenOdd - check odd and even function
 func checkEvenOdd() {
 
 	numbers := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
